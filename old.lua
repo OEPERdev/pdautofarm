@@ -1439,6 +1439,9 @@ if setfpscap and type(setfpscap) == "function" then
 	fpsLimit:Set((getgenv().settings.fpsLimit / 60) * 100)
 	setfpscap(getgenv().settings.fpsLimit)
 end
+otherTab:AddButton("Load Infinite Yield", function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
 
 --otherTab2
 

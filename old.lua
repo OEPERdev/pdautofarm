@@ -950,6 +950,13 @@ standingPos:Add('Left')
 standingPos:Add('Right')
 standingPos:Add('Behind')
 
+local webhookBox = webhookTab:AddTextBox("Stand text colo(u)r (e.g. 2BB1FF)", function(colour)
+	if string.find(colour) then
+		getgenv().settings.hexBox = colour;
+		saveSettings()
+	end
+end,
+
 --highlights
 highlightTab:AddLabel("Check the highlights server for info")
 highlightTab:AddLabel('(or join manually: SaGSHTVmKM)')

@@ -353,7 +353,7 @@ local sValues = {
 	30,
 	true,
 	15,
-	"#21B1FF",
+	"21B1FF",
 	5,
 	false,
 	"",
@@ -1107,7 +1107,7 @@ end)
 webhookTab:AddLabel('Webhook Type: ')
 
 local webhookType = webhookTab:AddDropdown("[ " .. getgenv().settings.webhookType .. " ]", function(t)
-	if t == 'New [BUGGY]' then
+	if t == 'New [Cool embeds]' then
 		getgenv().settings.webhookType = 'New'
 	else
 		getgenv().settings.webhookType = 'Old'

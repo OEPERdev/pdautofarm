@@ -850,7 +850,7 @@ local textUpdateToggle = boothTab:AddSwitch("Text Update", function(bool)
 		return
 	end
 	getgenv().settings.textUpdateToggle = bool
-		getgenv().settings.hexBox = "#2BB1FF"
+		getgenv().settings.hexBox = "43, 177, 255"
 	saveSettings()
 	if bool then
 		updateBoothText()

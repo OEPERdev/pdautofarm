@@ -397,7 +397,7 @@ local sValues = {
 	0,
 	'New',
 	false,
-	'Ubunty',
+	'Ubuntu',
 	5,
 	false,
 	false,

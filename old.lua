@@ -826,7 +826,7 @@ if game:GetService('CoreGui'):FindFirstChild('RobloxPromptGui') then
 	end)
 end
 
-local Window = library:AddWindow("oeper's PLS DONATE autofarm | RightShift to hide",
+local Window = library:AddWindow("oeper's PLS DONATE autofarm | by szze, modded by oeper",
   {
 	main_color = Color3.fromRGB(80, 80, 80),
 	min_size = Vector2.new(560, 563),
@@ -1526,6 +1526,9 @@ otherTab2:AddButton("Save Replies", function()
 end)
 
 supportTab:AddLabel("You can tip me by gifting me. (user is oeperdev)")
+supportTab:AddLabel("The original script is made by szze. You can tip him by clicking this button")
+supportTab:AddButton('This button', function()
+	game:GetService('TeleportService'):Teleport(13461969417)
 
 boothTab:Show()
 library:FormatWindows()

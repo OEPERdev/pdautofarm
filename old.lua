@@ -950,7 +950,7 @@ standingPos:Add('Left')
 standingPos:Add('Right')
 standingPos:Add('Behind')
 
-local hexBox = boothTab:AddTextBox("Stand text colo(u)r (e.g. 2BB1FF)", function(colour)
+--[[local hexBox = boothTab:AddTextBox("Stand text colo(u)r (e.g. 2BB1FF)", function(colour)
 		getgenv().settings.hexBox = colour;
 		saveSettings()
 		updateBoothText()
@@ -960,7 +960,7 @@ end)
 while true do
 getgenv().settings.hexBox = colour
 
-end
+end--]]
 
 --highlights
 highlightTab:AddLabel("Check the highlights server for info")

@@ -1526,9 +1526,7 @@ otherTab2:AddButton("Save Replies", function()
 end)
 
 supportTab:AddLabel("Modded by oeperdev, not original script")
-supportTab:AddLabel("The original script is made by szze. You can tip him by clicking this button")
-supportTab:AddButton('This button', function()
-	game:GetService('TeleportService'):Teleport(13461969417)
+supportTab:AddLabel("The original script is made by szze. You can tip him @akrienside")
 supportTab:AddLabel("I recommend you to use the original one as it gets updated")
 supportTab:AddLabel("more frequently. Check the forked repository for the original one.")
 

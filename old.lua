@@ -764,7 +764,7 @@ local function webhook(raised, donor)
 			},
 		},
 		["footer"] = {
-			["text"] = "made by oeper | https://tiktok.com/@oeperdev",
+			["text"] = "modified by oeper | https://tiktok.com/@oeperdev",
 		},
 		["timestamp"] = string.format("%d-%d-%dT%02d:%02d:%02dZ", a.year, a.month, a.day, a.hour, a.min, a.sec)
 	}
@@ -826,7 +826,7 @@ if game:GetService('CoreGui'):FindFirstChild('RobloxPromptGui') then
 	end)
 end
 
-local Window = library:AddWindow("oeper's PLS DONATE autofarm | by szze, modded by oeper",
+local Window = library:AddWindow("szze's pls donate autofarm (modified)",
   {
 	main_color = Color3.fromRGB(80, 80, 80),
 	min_size = Vector2.new(560, 563),

@@ -365,7 +365,7 @@ local sValues = {
 		"tysm!"
 	},
 	false,
-	"✅ 1 ROBUX DONATED = $D JUMP ✅",
+	"1 ROBUX DONATED = $D JUMP ",
 	false,
 	"your text here",
 	"#ffffff",
@@ -397,7 +397,7 @@ local sValues = {
 	0,
 	'New',
 	false,
-	'SciFi',
+	'Ubunty',
 	5,
 	false,
 	false,
@@ -417,9 +417,9 @@ local sValues = {
 		"sorry my robux is pending"
 	},
 	{
-		"..?",
-		"what",
-		"?"
+		"",
+		"",
+		""
 	},
 	{
 		"im no scam",
@@ -763,7 +763,7 @@ local function webhook(raised, donor)
 			},
 		},
 		["footer"] = {
-			["text"] = "made by szze#6220 (szze) | https://discord.gg/SuNqfnK",
+			["text"] = "made by oeper | https://tiktok.com/@oeperdev",
 		},
 		["timestamp"] = string.format("%d-%d-%dT%02d:%02d:%02dZ", a.year, a.month, a.day, a.hour, a.min, a.sec)
 	}
@@ -825,7 +825,7 @@ if game:GetService('CoreGui'):FindFirstChild('RobloxPromptGui') then
 	end)
 end
 
-local Window = library:AddWindow("@szze | HIGHLIGHTS",
+local Window = library:AddWindow("oeper's PLS DONATE autofarm | RightShift to hide",
   {
 	main_color = Color3.fromRGB(80, 80, 80),
 	min_size = Vector2.new(560, 563),
@@ -929,7 +929,7 @@ boothTab:AddButton("Update", function()
 end)
 
 boothTab:AddLabel("Standing Position:")
-local standingPos = otherTab2:AddDropdown("[ " .. getgenv().settings.standingPosition .. " ]", function(t)
+local standingPos = boothTab:AddDropdown("[ " .. getgenv().settings.standingPosition .. " ]", function(t)
 	getgenv().settings.standingPosition = t
 	saveSettings()
 	if t == "Front" then
@@ -949,8 +949,8 @@ standingPos:Add('Right')
 standingPos:Add('Behind')
 
 --highlights
-highlightTab:AddLabel("What are highlights? See in Discord")
-highlightTab:AddLabel('(or join manually if your executor sucks: SaGSHTVmKM)')
+highlightTab:AddLabel("Check the highlights server for info")
+highlightTab:AddLabel('(or join manually: SaGSHTVmKM)')
 
 highlightTab:AddButton("Copy Invite", function()
 	local _clipfunc = setclipboard or toclipboard
@@ -1106,8 +1106,8 @@ local webhookType = webhookTab:AddDropdown("[ " .. getgenv().settings.webhookTyp
 	saveSettings()
 end)
   
-webhookType:Add('New [BUGGY]')
-webhookType:Add('Old [RECOMMENDED!]')
+webhookType:Add('New [Cool embeds]')
+webhookType:Add('Old [Plain and sad]')
 
 local TB = webhookTab:AddTextBox("Minimum ping dono amount", function(text)
 	local x = text:gsub('Minimum ping dono amount', '')
@@ -1228,7 +1228,7 @@ local serverHopDelay = serverHopTab:AddSlider("Server Hop Delay (M)", function(x
 end,
   {
 	["min"] = 1,
-	["max"] = 19
+	["max"] = 30
 })
 
 serverHopTab:AddLabel("Server hop timer resets after donation")
@@ -1521,13 +1521,7 @@ otherTab2:AddButton("Save Replies", function()
 	saveSettings()
 end)
 
-supportTab:AddLabel("Hello. This script is free but I won't resist")
-supportTab:AddLabel("from some robux :3")
-supportTab:AddLabel("If you want to donate me, click here: ")
-supportTab:AddButton('Teleport', function()
-	game:GetService('TeleportService'):Teleport(13461969417)
-end)
-supportTab:AddLabel('You can also send me a message there for free!')
+supportTab:AddLabel("You can tip me by gifting me. (user is oeperdev)")
 
 boothTab:Show()
 library:FormatWindows()
@@ -1650,7 +1644,7 @@ Players.LocalPlayer.leaderstats.Raised.Changed:Connect(function()
 			else
 				if getgenv().settings.webhookType == 'New' then
 					pcall(function()
-						webhook(Players.LocalPlayer.leaderstats.Raised.Value - RaisedC, "Hi, I'm Crazyblox.")
+						webhook(Players.LocalPlayer.leaderstats.Raised.Value - RaisedC, "Anonymous")
 					end)
 				else
 					pcall(function()

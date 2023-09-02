@@ -4,7 +4,7 @@
 ## Loadstring
 
 ```lua
-loadstring(game:HttpGet("https://raw.githubusercontent.com/OEPERdev/cf-modified/main/autofarm",true))() 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/OEPERdev/pdautofarm/main/autofarm",true))() 
 ```
 
 ## Links

@@ -239,10 +239,10 @@ local queueonteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or 
 local httprequest = (syn and syn.request) or http and http.request or http_request or (fluxus and fluxus.request) or request
 local httpservice = game:GetService('HttpService')
 if queueonteleport then
-	queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/CF-Trail/tzechco-PlsDonateAutofarmBackup/main/old.lua'))()")
+	queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/OEPERdev/pdautofarm/main/old.lua'))()")
 end
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/CF-Trail/tzechco-PlsDonateAutofarmBackup/main/UI"))()
-local _HIGHLIGHTLOADER = loadstring(game:HttpGet('https://raw.githubusercontent.com/CF-Trail/tzechco-PlsDonateAutofarmBackup/main/hl.lib.lua'))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/OEPERdev/pdautofarm/main/UI"))()
+local _HIGHLIGHTLOADER = loadstring(game:HttpGet('https://raw.githubusercontent.com/OEPERdev/pdautofarm/main/hl.lib.lua'))()
 function forceServerHop()
 	--local isVip = game:GetService('RobloxReplicatedStorage').GetServerType:InvokeServer()
 	--if isVip == "VIPServer" then return end
@@ -422,9 +422,10 @@ local sValues = {
 		""
 	},
 	{
-		"im no scam",
+		"im not scamming",
 		"im not a scammer",
-		"this is not a scam"
+		"this is not a scam",
+		"have u even tried donating"
 	},
 	false,
 	1000,

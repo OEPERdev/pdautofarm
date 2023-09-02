@@ -16,7 +16,7 @@ wait(5)
 
 --Checks what executor is in use
 if string.find(identifyexecutor(), "Synapse X") then
-    syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/CF-Trail/tzechco-PlsDonateAutofarmBackup/main/noGUI'))()")
+    syn.queue_on_teleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/OEPERdev/pdautofarm/main/noGUI'))()")
 else
     game.StarterGui:SetCore("SendNotification", {
         Title = "Not using Synapse X",
@@ -148,10 +148,10 @@ while true do
         if Raised.Value > 999 then
             text = string.format("%.1fk", text / 10 ^ 3)
             --Booth text when 1000+ robux raised
-            boothText = tostring('✅ 1 ROBUX DONATED = 1 JUMP ✅')
+            boothText = tostring('1 ROBUX DONATED = 1 JUMP')
         else
             --Booth text when under 1000 robux raised
-            boothText = tostring('✅ 1 ROBUX DONATED = 1 JUMP ✅')
+            boothText = tostring('1 ROBUX DONATED = 1 JUMP')
         end
         --Updates the booth text
         require(game.ReplicatedStorage.Remotes).Event("SetBoothText"):FireServer(boothText, "booth")

@@ -840,7 +840,7 @@ local webhookTab = Window:AddTab("Webhook")
 local serverHopTab = Window:AddTab("Server")
 local otherTab = Window:AddTab("Other")
 local otherTab2 = Window:AddTab("Other 2")
-local supportTab = Window:AddTab("Support")
+local supportTab = Window:AddTab("Info")
 local TextService = game:GetService("TextService")
 local sgoalR = 0
   
@@ -949,6 +949,19 @@ standingPos:Add('Front')
 standingPos:Add('Left')
 standingPos:Add('Right')
 standingPos:Add('Behind')
+
+local hexBox = boothTab:AddDropdown("[ " .. getgenv().settings.hexBox .. " ]", function(t)
+	if t == 'Blue' then
+		getgenv().settings.hexBox = '#21B1FF'
+	else
+		if t == 'Green' then
+		getgenv().settings.hexBox = '#37914A'
+	else
+		if t == 'White' then
+		getgenv().settings.hexBox = '#C3EDE5'
+	end
+	saveSettings()
+end)
 
 
 --highlights

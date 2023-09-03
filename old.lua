@@ -950,7 +950,7 @@ standingPos:Add('Left')
 standingPos:Add('Right')
 standingPos:Add('Behind')
 
-local hexSelec = boothTab:AddDropdown("[ " .. getgenv().settings.hexBox .. " ]", function(btc)
+--[[local hexSelec = boothTab:AddDropdown("[ " .. getgenv().settings.hexBox .. " ]", function(btc)
 	getgenv().settings.hexBox = btc
 		if btc == 'Blue' then
 		getgenv().settings.hexBox = '#21B1FF'
@@ -971,6 +971,7 @@ hexSelec:Add('Blue')
 hexSelec:Add('Green')
 hexSelec:Add('White')
 hexSelec:Add('Red')
+]]
 
 --highlights
 highlightTab:AddLabel("Check the highlights server for info")

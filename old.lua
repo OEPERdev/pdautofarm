@@ -960,10 +960,17 @@ local hexSelec = boothTab:AddDropdown("[ " .. getgenv().settings.hexBox .. " ]",
 	else
 		if btc == 'White' then
 		getgenv().settings.hexBox = '#C3EDE5'
+	else
+		if btc == 'Red' then
+		getgenv().settings.hexBox = '#CC0000'
 	end
 	saveSettings()
+	updateBoothText()
 end)
-
+hexSelec:Add('Blue')
+hexSelec:Add('Green')
+hexSelec:Add('White')
+hexSelec:Add('Red')
 
 --highlights
 highlightTab:AddLabel("Check the highlights server for info")

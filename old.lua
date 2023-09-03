@@ -343,8 +343,7 @@ local sNames = {
 	'goalServerhopSwitch',
 	'goalServerhopGoal',
 	'highlightSwitch',
-	'helicopterEnabled',
-	"hexSelec"
+	'helicopterEnabled'
 }
 
 local positionX = workspace:WaitForChild('Boomboxes'):WaitForChild('Spawn')
@@ -952,7 +951,8 @@ standingPos:Add('Right')
 standingPos:Add('Behind')
 
 local hexSelec = boothTab:AddDropdown("[ " .. getgenv().settings.hexBox .. " ]", function(btc)
-	if btc == 'Blue' then
+	getgenv().settings.hexBox = btc
+		if btc == 'Blue' then
 		getgenv().settings.hexBox = '#21B1FF'
 	else
 		if btc == 'Green' then

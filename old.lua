@@ -950,10 +950,9 @@ standingPos:Add('Right')
 standingPos:Add('Behind')
 
 boothTab:AddLabel("Text Color (IN DEVELOPMENT):")
-boothTab:AddLabel("hexbox (dev): " .. hexBox)
 		
 
---highlights
+--highlights!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 highlightTab:AddLabel("Check the highlights server for info")
 highlightTab:AddLabel('(or join manually: SaGSHTVmKM)')
 

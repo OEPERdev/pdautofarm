@@ -950,17 +950,17 @@ standingPos:Add('Right')
 standingPos:Add('Behind')
 
 boothTab:AddLabel("Text Color:")
-local hexSelec = boothTab:AddDropdown("[ " .. getgenv().settings.hexBox .. " ]", function(btc)
+local hexSelec = boothTab:AddDropdown("[ " .. btc .. " ]", function(btc) --replace .. part with getgenv().settings.hexBox
 	getgenv().settings.hexBox = btc
 		if btc = 'Blue' then
 		getgenv().settings.hexBox = '#21B1FF'
-		if btc = 'Green' then
+		else if btc = 'Green' then
 		getgenv().settings.hexBox = '#37914A'
 	
-		if btc = 'White' then
+			else if btc = 'White' then
 		getgenv().settings.hexBox = '#C3EDE5'
 	
-		if btc = 'Red' then
+				else if btc = 'Red' then
 		getgenv().settings.hexBox = '#CC0000'
 	end
 	saveSettings()

@@ -882,6 +882,26 @@ end,
 })
 textUpdateDelay:Set((getgenv().settings.textUpdateDelay / 120) * 100)
 
+boothTab:AddLabel("Booth text colour:")
+local hexBox = boothTab:AddTextBox("Hex Codes Only (e.g. #21B1FF)", function(text)
+	if settingsLock then
+		return
+	end
+	local success = pcall(function()
+		return Color3.fromHex(text)
+	end)
+	if success and string.find(text, "#") then
+		getgenv().settings.hexBox = text
+		saveSettings()
+		update()
+	end
+end,
+  {
+	["clear"] = false
+})
+hexBox.Text = getgenv().settings.hexBox
+
+
 boothTab:AddLabel("Goal Increase:")
 local goalBox = boothTab:AddTextBox("Numbers Only", function(text)
 	if tonumber(text) then

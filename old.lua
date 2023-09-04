@@ -963,8 +963,8 @@ local hexSelec = boothTab:AddDropdown("[ " .. btc .. " ]", function(btc) --repla
 				else if btc == 'Red' then
 		getgenv().settings.hexBox = '#CC0000'
 	end
-	saveSettings()
-	updateBoothText()
+	--saveSettings()
+	--updateBoothText()
 end)
 hexSelec:Add('Blue')
 hexSelec:Add('Green')

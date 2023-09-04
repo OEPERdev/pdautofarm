@@ -949,8 +949,6 @@ standingPos:Add('Left')
 standingPos:Add('Right')
 standingPos:Add('Behind')
 
-boothTab:AddLabel("Text Color (IN DEVELOPMENT):")
-		
 
 --highlights!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 highlightTab:AddLabel("Check the highlights server for info")

@@ -970,7 +970,6 @@ hexSelec:Add('Blue')
 hexSelec:Add('Green')
 hexSelec:Add('White')
 hexSelec:Add('Red')
-]]
 		
 
 --highlights

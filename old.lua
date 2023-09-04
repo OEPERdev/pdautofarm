@@ -353,7 +353,7 @@ local sValues = {
 	30,
 	true,
 	15,
-	"21B1FF",
+	"#21B1FF",
 	5,
 	false,
 	"",
@@ -950,26 +950,7 @@ standingPos:Add('Right')
 standingPos:Add('Behind')
 
 boothTab:AddLabel("Text Color (IN DEVELOPMENT):")
---[[local hexSelec = boothTab:AddDropdown("[ " .. btc .. " ]", function(btc) --replace .. part with getgenv().settings.hexBox
-	getgenv().settings.hexBox = btc
-		if btc == 'Blue' then
-		getgenv().settings.hexBox = '#21B1FF'
-		else if btc == 'Green' then
-		getgenv().settings.hexBox = '#37914A'
-	
-			else if btc == 'White' then
-		getgenv().settings.hexBox = '#C3EDE5'
-	
-				else if btc == 'Red' then
-		getgenv().settings.hexBox = '#CC0000'
-	end
-	--saveSettings()
-	--updateBoothText()
-end)
-hexSelec:Add('Blue')
-hexSelec:Add('Green')
-hexSelec:Add('White')
-hexSelec:Add('Red') ]]
+boothTab:AddLabel("hexbox (dev): " .. hexBox)
 		
 
 --highlights

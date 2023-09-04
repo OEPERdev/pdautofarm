@@ -353,7 +353,7 @@ local sValues = {
 	30,
 	true,
 	15,
-	"#21B1FF",
+	"21B1FF",
 	5,
 	false,
 	"",

@@ -954,13 +954,12 @@ local hexSelec = boothTab:AddDropdown("[ " .. getgenv().settings.hexBox .. " ]",
 	getgenv().settings.hexBox = btc
 		if btc = 'Blue' then
 		getgenv().settings.hexBox = '#21B1FF'
-	else
 		if btc = 'Green' then
 		getgenv().settings.hexBox = '#37914A'
-	else
+	
 		if btc = 'White' then
 		getgenv().settings.hexBox = '#C3EDE5'
-	else
+	
 		if btc = 'Red' then
 		getgenv().settings.hexBox = '#CC0000'
 	end

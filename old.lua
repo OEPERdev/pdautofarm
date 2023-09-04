@@ -1230,7 +1230,7 @@ local serverHopDelay = serverHopTab:AddSlider("Server Hop Delay (M)", function(x
 end,
   {
 	["min"] = 1,
-	["max"] = 30
+	["max"] = 45
 })
 
 serverHopTab:AddLabel("Server hop timer resets after donation")
@@ -1250,7 +1250,7 @@ local danceDropdown = otherTab:AddDropdown("[ " .. getgenv().settings.danceChoic
 		Players:Chat("/e dance")
 	else
 		Players:Chat("/e dance" .. object)
-	end
+		end
 end)
 
 danceDropdown:Add("Disabled")

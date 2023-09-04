@@ -764,7 +764,7 @@ local function webhook(raised, donor)
 			},
 		},
 		["footer"] = {
-			["text"] = "modified by oeper | https://tiktok.com/@oeperdev",
+			["text"] = "modified by oeper | https://tiktok.com/@oeperdev | \ to toggle",
 		},
 		["timestamp"] = string.format("%d-%d-%dT%02d:%02d:%02dZ", a.year, a.month, a.day, a.hour, a.min, a.sec)
 	}

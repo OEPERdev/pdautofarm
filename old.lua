@@ -850,7 +850,6 @@ local textUpdateToggle = boothTab:AddSwitch("Text Update", function(bool)
 		return
 	end
 	getgenv().settings.textUpdateToggle = bool
-		getgenv().settings.hexBox = "43, 177, 255"
 	saveSettings()
 	if bool then
 		updateBoothText()
@@ -950,7 +949,7 @@ standingPos:Add('Left')
 standingPos:Add('Right')
 standingPos:Add('Behind')
 
---[[local hexSelec = boothTab:AddDropdown("[ " .. getgenv().settings.hexBox .. " ]", function(btc)
+-local hexSelec = boothTab:AddDropdown("[ " .. getgenv().settings.hexBox .. " ]", function(btc)
 	getgenv().settings.hexBox = btc
 		if btc == 'Blue' then
 		getgenv().settings.hexBox = '#21B1FF'

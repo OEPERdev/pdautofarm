@@ -1247,6 +1247,7 @@ local serverHopDelay = serverHopTab:AddSlider("Server Hop Delay (M)", function(x
 	end
 	getgenv().settings.serverHopDelay = x
 	coroutine.wrap(slider)(getgenv().settings.serverHopDelay, "serverHopDelay")
+		saveSettings()
 end,
   {
 	["min"] = 1,

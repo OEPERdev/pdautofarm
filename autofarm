@@ -3,6 +3,7 @@
 	You are not allowed to claim this as your own.
 	Removal of initial credits to the authors is prohibited.
 ]]
+game.Players.LocalPlayer.RobloxLocked = true
 
 if 1 == 1 then
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/OEPERdev/pdautofarm/main/old.lua"))()

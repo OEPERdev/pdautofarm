@@ -319,7 +319,7 @@ local SaveManager = loadstring(game:HttpGet(repoLib .. 'addons/SaveManager.lua')
 local positionX = workspace:WaitForChild('Boomboxes'):WaitForChild('Spawn')
 
 local Window = Library:CreateWindow({
-	Title = 'pls donate | szze#6220',
+	Title = 'pls donate | oeper',
 	Center = true,
 	AutoShow = true,
 })
@@ -346,7 +346,7 @@ infoMain:AddLabel('Pls Donate | overhaul by szze#6220')
 infoMain:AddLabel('Config saves every 10 seconds')
 
 boothTextSettings:AddInput('boothTextTextbox', {
-	Default = "✅ 1 ROBUX DONATED = 1 JUMP ✅",
+	Default = "1 ROBUX DONATED = 1 JUMP",
 	Numeric = false,
 	Finished = true,
 	Text = 'Booth Text',

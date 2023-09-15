@@ -1551,6 +1551,7 @@ supportTab:AddLabel("Modded by oeperdev, not original script")
 supportTab:AddLabel("The original script is made by szze. You can tip him @akrienside")
 supportTab:AddLabel("I recommend you to use the original one as it gets updated more frequently. ")
 supportTab:AddLabel("Check the forked repository for the original one.")
+supportTab:AddLabel("If you didn't get the raw from github, then idk.")
 
 boothTab:Show()
 library:FormatWindows()

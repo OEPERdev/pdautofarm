@@ -205,6 +205,7 @@ local counter = 0
 local donation, boothText, spamming, hopTimer, vcEnabled
 local signPass = false
 local errCount = 0
+local uid = game:GetService('Players').LocalPlayer.UserId
 local booths = {
 	["1"] = "72, 3, 36",
 	["2"] = "83, 3, 161",
@@ -343,6 +344,7 @@ local sNames = {
 	'goalServerhopSwitch',
 	'goalServerhopGoal',
 	'highlightSwitch',
+	'friendHop'
 	'helicopterEnabled'
 }
 
@@ -379,7 +381,7 @@ local sValues = {
 	60,
 	false,
 	3,
-	true,
+	false,
 	true,
 	false,
 	false,
@@ -432,10 +434,9 @@ local sValues = {
 	false,
 	false,
 	false,
-	false,
 	0,
 	false,
-	false
+	true
 }
 
   --Load Settings
@@ -1196,7 +1197,15 @@ local staffHopSwitch = serverHopTab:AddSwitch('ServerHop if Staff', function(boo
 	getgenv().settings.staffHopA = bool
 	saveSettings()
 end)
+local friendHopSwitch = serverHopTab:AddSwitch('ServerHop if friend joined',function(bool)
+	if settingsLock then
+		return 
+	end
+	getgenv().settings.friendHop = bool
+	saveSettings()
+end)
 
+friendHopSwitch:Set(getgenv().settings.friendHop)
 staffHopSwitch:Set(getgenv().settings.staffHopA)
 
 local taggedBoothHopSwitch = serverHopTab:AddSwitch('ServerHop if tagged booth', function(bool)
@@ -1444,6 +1453,9 @@ end,
 spinMultiplier:Set(getgenv().settings.spinSpeedMultiplier)
 jumpsPerRB:Set(getgenv().settings.jumpsPerRobux)
 spinToggle:Set(getgenv().settings.spinSet)
+otherTab:AddButton('Test Donation',function()
+	Players.LocalPlayer.leaderstats.Raised.Value += 5
+end)
 
 if setfpscap and type(setfpscap) == "function" then
 	local fpsLimit = otherTab:AddSlider("FPS Limit", function(x)
@@ -1633,6 +1645,7 @@ if getgenv().settings.autoBeg then
 end
 local RaisedC = Players.LocalPlayer.leaderstats.Raised.value
 local djset = false
+local helidebounce = false
 Players.LocalPlayer.leaderstats.Raised.Changed:Connect(function()
 	local playerWhoDonated
 	sgoalR = sgoalR + (Players.LocalPlayer.leaderstats.Raised.Value - RaisedC)
@@ -1703,6 +1716,10 @@ Players.LocalPlayer.leaderstats.Raised.Changed:Connect(function()
 	end)
 	task.spawn(function()
 		if getgenv().settings.helicopterEnabled and not getgenv().settings.highlightSwitch then
+								if helidebounce then
+				return
+			end
+			helidebounce = true
 			local char = Players.LocalPlayer.Character
 			workspace['_HIGHLIGHT.CF'].CFrame = CFrame.new(char.Humanoid.RootPart.Position - Vector3.new(0, 3, 0))
 			chat('Enabling engines...')
@@ -1758,6 +1775,7 @@ Players.LocalPlayer.leaderstats.Raised.Changed:Connect(function()
 	if getgenv().settings.highlightSwitch then
 		task.spawn(function()
 			_HIGHLIGHTLOADER.HLStart(Players.LocalPlayer.Character, Players.LocalPlayer.leaderstats.Raised.Value - RaisedC)
+		_HIGHLIGHTLOADER.HLStart(Players.LocalPlayer.Character, Players.LocalPlayer.leaderstats.Raised.Value - RaisedC, (playerWhoDonated and playerWhoDonated or nil))
 		end)
 	end
 	RaisedC = Players.LocalPlayer.leaderstats.Raised.value
@@ -1835,12 +1853,16 @@ end
 Players.PlayerChatted:Connect(function(_____________________, player, message)
 	local speaker = tostring(player)
 	local message = string.lower(message)
-	local plrChatted = game:GetService('Players'):FindFirstChild(speaker)
 	task.wait(2.1 + math.random(0.4, 1))
+				local plrChatted = game:GetService('Players'):FindFirstChild(speaker)
 	if (plrChatted and plrChatted == game:GetService('Players').LocalPlayer) or getgenv().settings.autoNearReply == false or not plrChatted  or string.find(message, 'donates') or string.find(message, "spamming") then
 		return
 	end
+			if plrChatted:GetAttribute('respcd') then
+		return
+	end
 	pcall(function()
+		plrChatted:SetAttribute('respcd',true)
 		local chatChar = plrChatted.Character
 		if (plrChatted.Character and plrChatted.Character.Humanoid.RootPart) then
 			local root = chatChar.Humanoid.RootPart
@@ -1858,8 +1880,24 @@ Players.PlayerChatted:Connect(function(_____________________, player, message)
 				end
 			end
 		end
+				task.wait(15)
+		plrChatted:SetAttribute('respcd',false)
 	end)
 end)
+game:GetService('Players').PlayerAdded:Connect(function(player)
+	if player:IsFriendsWith(uid) and getgenv().settings.friendHop then
+	        Players.LocalPlayer:Kick('friend joined - rejoining')
+		serverHop()
+	end
+end)
+
+for i,player in next, Players:GetPlayers() do
+	if player:IsFriendsWith(uid) and getgenv().settings.friendHop then
+	        Players.LocalPlayer:Kick('friend is in - rejoining')
+		serverHop()
+	end
+end
+
 
 while task.wait(getgenv().settings.serverHopDelay * 60) do
 	if not hopTimer then

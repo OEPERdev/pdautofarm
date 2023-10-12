@@ -1,3 +1,5 @@
+#NOTE: INJECTORS MIGHT NOT WORK RN
+
 # Information
 
 ![read it](https://cdn.discordapp.com/attachments/1114749136265293973/1147463940520030238/cfmod.jpg)
